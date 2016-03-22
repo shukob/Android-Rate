@@ -53,6 +53,11 @@ public final class AppRate {
         return isMeetsConditions;
     }
 
+    public void reset() {
+        clearSettingsParam();
+        PreferenceHelper.clearRemindInterval(context);
+    }
+
     private static boolean isOverDate(long targetDate, int threshold) {
         return new Date().getTime() - targetDate >= threshold * 24 * 60 * 60 * 1000;
     }

@@ -72,7 +72,7 @@ final class PreferenceHelper {
     }
 
     static long getRemindInterval(Context context) {
-        return getPreferences(context).getLong(PREF_KEY_REMIND_INTERVAL, 0);
+        return getPreferences(context).getLong(PREF_KEY_REMIND_INTERVAL, new Date().getTime());
     }
 
     static void setInstallDate(Context context) {
@@ -82,7 +82,7 @@ final class PreferenceHelper {
     }
 
     static long getInstallDate(Context context) {
-        return getPreferences(context).getLong(PREF_KEY_INSTALL_DATE, 0);
+        return getPreferences(context).getLong(PREF_KEY_INSTALL_DATE, new Date().getTime());
     }
 
     static void setLaunchTimes(Context context, int launchTimes) {

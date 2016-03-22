@@ -71,8 +71,14 @@ final class PreferenceHelper {
         editor.apply();
     }
 
+    static void clearLaunchTimes(Context context) {
+        SharedPreferences.Editor editor = getPreferencesEditor(context);
+        editor.remove(PREF_KEY_LAUNCH_TIMES);
+        editor.apply();
+    }
+
     static long getRemindInterval(Context context) {
-        return getPreferences(context).getLong(PREF_KEY_REMIND_INTERVAL, new Date().getTime());
+        return getPreferences(context).getLong(PREF_KEY_REMIND_INTERVAL, 0);
     }
 
     static void setInstallDate(Context context) {
@@ -82,7 +88,7 @@ final class PreferenceHelper {
     }
 
     static long getInstallDate(Context context) {
-        return getPreferences(context).getLong(PREF_KEY_INSTALL_DATE, new Date().getTime());
+        return getPreferences(context).getLong(PREF_KEY_INSTALL_DATE, 0);
     }
 
     static void setLaunchTimes(Context context, int launchTimes) {

@@ -56,6 +56,7 @@ public final class AppRate {
     public void reset() {
         clearSettingsParam();
         PreferenceHelper.clearRemindInterval(context);
+        PreferenceHelper.clearLaunchTimes(context);
     }
 
     private static boolean isOverDate(long targetDate, int threshold) {

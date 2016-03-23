@@ -68,6 +68,10 @@ public final class AppRate {
         return this;
     }
 
+    public int getLaunchTimes(){
+        return PreferenceHelper.getLaunchTimes(context);
+    }
+
     public AppRate setInstallDays(int installDate) {
         this.installDate = installDate;
         return this;
@@ -188,7 +192,7 @@ public final class AppRate {
         if (isFirstLaunch(context)) {
             setInstallDate(context);
         }
-        PreferenceHelper.setLaunchTimes(context, getLaunchTimes(context) + 1);
+        PreferenceHelper.setLaunchTimes(context, getLaunchTimes() + 1);
     }
 
     public void showRateDialog(Activity activity) {
@@ -205,7 +209,7 @@ public final class AppRate {
     }
 
     private boolean isOverLaunchTimes() {
-        return getLaunchTimes(context) >= launchTimes;
+        return getLaunchTimes() >= launchTimes;
     }
 
     private boolean isOverInstallDate() {

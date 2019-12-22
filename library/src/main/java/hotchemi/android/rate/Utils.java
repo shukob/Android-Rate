@@ -3,7 +3,7 @@ package hotchemi.android.rate;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 
 final class Utils {
 
